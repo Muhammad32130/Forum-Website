@@ -48,10 +48,10 @@ function Post({title, subtitle,username,user, updatepost,data}) {
 console.log(edit)
 
   return (
-    <div className=' h-[40%] min-[425px]:h-[240px] min-[425px]:w-[380px] bg-[white]  mb-[20px]   w-[280px] '>
-        {!edit ? <div className='flex flex-col items-start  text-[10px] min-[425px]:mt-2 ' >
-          <div className='  text-[12px] flex   items-center justify-between w-[100%] text-xl  text-[black] italic font-semibold h-[30px]    '>
-            <h1 className=' ml-5 text-[16px]  min-[425px]:text-[18px] '>
+    <div className=' bg-[white]  mb-[20px]  w-[280px] md:w-[550px] lg:w-[70%] xl:w-[60%] 2xl:w-[45%] 2xl:mb-20  '>
+        {!edit ? <div className='md:m-4 lg:m-8 md:ml-6 flex flex-col items-start  text-[10px] min-[425px]:mt-2 ' >
+          <div className=' text-[12px] flex items-center justify-between w-[100%] text-xl  text-[black] italic font-semibold h-[30px]    '>
+            <h1 className='lg:text-[22px] xl:text-[30px] ml-5 text-[16px] lg: underline min-[425px]:text-[18px] '>
           {username}
             </h1>
           {user?.uid === data?.uid ?
@@ -64,22 +64,21 @@ console.log(edit)
           </div>
           
               <div className='flex flex-col '>
-                <h1 className=' m-5 text-black font-bold text-2xl text-[14px] mb-2 mt-0 min-[425px]:text-[16px] min-[425px]:mt-2'  >
+                <h1 className=' m-5 xl:text-[22px] text-black font-bold text-2xl text-[14px] mb-2 mt-0 min-[425px]:text-[16px] min-[425px]:mt-2 lg:text-[20px] lg:mt-6'  >
               {`#${data?.Topic}`}
                 </h1>
-                <h1 className=' ml-5   text-black font-semibold text-2xl  m-2  mt-0  mb-0  leading-relaxed  text-[15px]  min-[425px]:text-[18px]   '>
+                <h1 className='lg:text-[24px] xl:text-[28px] ml-5 md:mt-2 md:text-[22px] text-black font-semibold text-2xl  m-2  mt-0  mb-0  leading-relaxed  text-[15px]  min-[425px]:text-[18px]   '>
                 {title}
                 </h1>
               </div>
-            <p className=' text-black text-xl  leading-normal  ml  text-[13px]   my-2   ml-5 min-[425px]:text-[14px] ' >{subtitle}</p>
+            <p className='md:text-[16px] xl:text-[22px] lg:text-[20px] md:mb-4 text-black text-xl  leading-normal  ml  text-[13px]   my-2   ml-5 min-[425px]:text-[14px] ' >{subtitle}</p>
             <form className='flex flex-col  mt-1 ' onSubmit={(event)=>postComment(event)}>
-            <textarea placeholder='Comment'  name="comment" className=' w-[280px]  h-[100px] border border-[#14141] mr-10 mt-5]  max-w-[140px]  max-h-[20px]  mt-0 ml-4  min-[425px]:max-h-[40px] min-[425px]:max-w-[180px] '  id="" cols="80" rows="8" ></textarea>
-            <button type='submit' className='text-[#141414]  border rounded   mt-[6px]  p-[2px]  mb-[6px]  w-[60px]  ml-5  '>Comment </button>
+            <textarea placeholder='Comment'  name="comment" className='lg:w-[100%] xl:w-[700px] xl:max-h-[250px] w-[280px] h-[100px] border border-[#14141] mr-10 mt-5]  max-w-[140px]  max-h-[20px]  mt-0 ml-4  min-[425px]:max-h-[40px] min-[425px]:max-w-[180px] md:max-w-[550px] md:w-[60%] md:max-h-[80px]'  id="" cols="80" rows="8" ></textarea>
+            <button type='submit' className='text-[#141414] lg:my-4 lg:p-2 border rounded mt-[6px]  p-[2px]  mb-[6px]  w-[60px]  ml-5 xl:text-[16px] xl:pl-5 xl:px-20 '>Comment </button>
             </form>
             {data.comments?.map((comment)=>{
               return(<>
-                  <h2 className='ml-10 text-[black] font-bold   '>Comments:</h2>
-                <div className='comment border  ml-2 '>
+                <div className='comment border xl:text-[16px] ml-2 '>
                 {comment}
               </div>
               </>
