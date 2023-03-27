@@ -48,38 +48,38 @@ function Post({title, subtitle,username,user, updatepost,data}) {
 console.log(edit)
 
   return (
-    <div className=' h-[50%] w-[50%] 3xsm:w-[250px] bg-[white] mt-[20px] mb-[20px] xsm:mt-20 xsm:w-[320px] '>
-        {!edit ? <div className='flex flex-col items-start 3xsm:text-[10px] ' >
-          <div className=' 3xsm:text-[12px] flex xsm:text-[15px] items-center justify-between w-[100%] text-xl mt-10 3xsm:mt-1 text-[black] italic font-semibold h-[30px]   '>
-            <h1 className='3xsm:pl-2 pl-10 xsm:pl-5 '>
+    <div className=' h-[40%] min-[425px]:h-[240px] min-[425px]:w-[380px] bg-[white]  mb-[20px]   w-[280px] '>
+        {!edit ? <div className='flex flex-col items-start  text-[10px] min-[425px]:mt-2 ' >
+          <div className='  text-[12px] flex   items-center justify-between w-[100%] text-xl  text-[black] italic font-semibold h-[30px]    '>
+            <h1 className=' ml-5 text-[16px]  min-[425px]:text-[18px] '>
           {username}
             </h1>
           {user?.uid === data?.uid ?
-          <div className='mr-10 max-[325px]:mr-2 max-[325px]:mt-2'>
-            <button onClick={() => {deletePost(data?.id)}} className='mr-10 max-[325px]:mr-2 p-2 max-[325px]:p-[4px] border max-[325px]:text-[10px]'>Delete </button>
+          <div className=' text-[12px] flex mt-6 mr-2'>
+            <button onClick={() => {deletePost(data?.id)}} className='mr-2 px-1 border '>Delete </button>
            
-            <button onClick={ () => {setEdit(true)}} className='border p-2 max-[325px]:p-[4px] max-[325px]:text-[10px] '>Edit</button>         
+            <button onClick={ () => {setEdit(true)}} className='border px-1 '>Edit</button>         
           </div>
             :null}
           </div>
           
               <div className='flex flex-col '>
-                <h1 className=' m-10 text-black font-bold text-2xl 3xsm:text-[10px] 3xsm:m-2 3xsm:mt-0 3xsm:mb-0 xsm:text-[14px] xsm:mb-2 xsm:m-5 xsm:mt-0' >
+                <h1 className=' m-5 text-black font-bold text-2xl text-[14px] mb-2 mt-0 min-[425px]:text-[16px] min-[425px]:mt-2'  >
               {`#${data?.Topic}`}
                 </h1>
-                <h1 className='xsm:ml-5 xsm:mb-4 m-10 mt-1 text-black font-bold text-2xl 3xsm:text-[10px] 3xsm:m-2 3xsm:mt-0 3xsm:mb-0 3xsm:leading-relaxed xsm:text-[15px]   '>
+                <h1 className=' ml-5   text-black font-semibold text-2xl  m-2  mt-0  mb-0  leading-relaxed  text-[15px]  min-[425px]:text-[18px]   '>
                 {title}
                 </h1>
               </div>
-            <p className='m-10 text-black text-xl 3xsm:text-[10px] 3xsm:m-2 3xsm:leading-normal 3xsm:ml xsm:text-[15px] xsm:mt-0 xsm:ml-5 ' >{subtitle}</p>
-            <form className='flex flex-col 3xsm:mt-1 ' onSubmit={(event)=>postComment(event)}>
-            <textarea placeholder='Comment'  name="comment" className='xsm:w-[280px] xsm:h-[100px] w- xsm:ml-2 border border-[#14141] mr-10 ml-10 mt-5] 3xsm:mt-0 3xsm:ml-2 3xsm:max-w-[140px] 3xsm:max-h-[20px] xsm:mt-0 '  id="" cols="80" rows="8" ></textarea>
-            <button type='submit' className='text-[#141414] ml-10 mb-5 mt-5 p-2 border rounded w-[120px] 3xsm:ml-2 3xsm:mt-[6px] 3xsm:p-[2px] 3xsm:mb-[6px] 3xsm:w-[60px] xsm:ml-3   '>Comment </button>
+            <p className=' text-black text-xl  leading-normal  ml  text-[13px]   my-2   ml-5 min-[425px]:text-[14px] ' >{subtitle}</p>
+            <form className='flex flex-col  mt-1 ' onSubmit={(event)=>postComment(event)}>
+            <textarea placeholder='Comment'  name="comment" className=' w-[280px]  h-[100px] border border-[#14141] mr-10 mt-5]  max-w-[140px]  max-h-[20px]  mt-0 ml-4  min-[425px]:max-h-[40px] min-[425px]:max-w-[180px] '  id="" cols="80" rows="8" ></textarea>
+            <button type='submit' className='text-[#141414]  border rounded   mt-[6px]  p-[2px]  mb-[6px]  w-[60px]  ml-5  '>Comment </button>
             </form>
             {data.comments?.map((comment)=>{
               return(<>
-                  <h2 className='ml-10 text-[black] font-bold 3xsm:ml-2 xsm:ml-5 '>Comments:</h2>
-                <div className='comment border 3xsm:ml-2 xsm:ml-5  '>
+                  <h2 className='ml-10 text-[black] font-bold   '>Comments:</h2>
+                <div className='comment border  ml-2 '>
                 {comment}
               </div>
               </>
@@ -91,8 +91,8 @@ console.log(edit)
           <label>Title:</label>
         <input required defaultValue={title} className=' font-semibold fontStyle-italic w-[100%] rounded border border-[#141414] focus:outline-none ' type="text" />
         <label>SubTitle:</label>
-        <textarea required defaultValue={subtitle} className='w-[100%] h-[200px] rounded border border-[#141414] focus:outline-none' type="text-area" />
-        <button type='submit'>Save</button>
+        <textarea required defaultValue={subtitle} className='w-[100%] h-[100px] min-[425px]:h-[80px] rounded border border-[#141414] focus:outline-none' type="text-area" />
+        <button className='border px-1' type='submit'>Save</button>
             </form>
           </div>
           </div>}

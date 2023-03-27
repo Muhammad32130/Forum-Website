@@ -52,16 +52,16 @@ function Home({signout, printDoc, setSubtitle, setTitle, data,user, updatepost,s
 
  <Modal clicked={clicked} setselected={setselected} data={data} setTitle={setTitle} printDoc={printDoc} setSubtitle={setSubtitle} setShow={setmodal}  modal={modal}/>
 <div className='flex justify-end items-start color text-[orange] '>
-  <div className=' w-[100%] overflow-hidden flex 3xsm:mt-14 flex-col items-center justify-center '>
+  <div className=' min-[425px]:mt-16 w-[100%] overflow-hidden flex  mt-14 flex-col items-center justify-center '>
    
    {dataRef}
  
   </div>
-  <div className='flex absolute left-8 pt-8 3xsm:left-2 3xsm:text-[10px] xsm:left-2 xsm:text-[12px]  text-[black]'>
+  <div className='flex absolute  pt-6 text-[10px]  left-2    text-[black]'>
     <div className='text-[gray]    '>
     Select Search: 
   </div>
-  <select onChange={(e) => {setSel(e.target.value)}   } name="Topic" className='border rounded ml-2 w-[112px] h-[25px] bg-[black] text-white 3xsm:w-[80px] 3xsm:h-[20px]' id="Topic" required>
+  <select onChange={(e) => {setSel(e.target.value)}   } name="Topic" className='border rounded ml-2 bg-[black] text-white  w-[80px]  h-[20px]' id="Topic" required>
           <option value="All Topics" selected>All Topics</option>
           <option value="Off-Topic">Off-Topic</option>
           <option value="Games">Games</option>
@@ -70,7 +70,7 @@ function Home({signout, printDoc, setSubtitle, setTitle, data,user, updatepost,s
         
   </div>
   {user?
-    <button onClick={()=>setmodal(true)} className='forum__btn 3xsm:p-[4px] 3xsm:mt-7 3xsm:mr-[16px] 3xsm:text-[14px]  '>Post Forum</button>
+    <button onClick={()=>setmodal(true)} className='forum__btn  p-[4px]  mt-5  mr-[16px]  text-[14px]  '>Post Forum</button>
     :
 
     <Link to='/login'>
